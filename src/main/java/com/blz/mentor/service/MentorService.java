@@ -35,7 +35,7 @@ public class MentorService implements IMentorService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8099/mentor/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			MentorModel model = new MentorModel(mentorDTO);
 			mentorRepository.save(model);
@@ -52,7 +52,7 @@ public class MentorService implements IMentorService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8099/mentor/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			Optional<MentorModel> isMentorPresent = mentorRepository.findById(id);
 			if(isMentorPresent.isPresent()) {
@@ -88,7 +88,7 @@ public class MentorService implements IMentorService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8099/mentor/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			List<MentorModel> getAllMentors = mentorRepository.findAll();
 			if(getAllMentors.size() > 0) {
@@ -105,7 +105,7 @@ public class MentorService implements IMentorService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8099/mentor/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			Optional<MentorModel> isMentorPresent = mentorRepository.findById(id);
 			if(isMentorPresent.isPresent()) {
@@ -125,7 +125,7 @@ public class MentorService implements IMentorService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8099/mentor/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			return mentorRepository.findById(id);
 		}
@@ -137,7 +137,7 @@ public class MentorService implements IMentorService {
 		//		Long admId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(admId);
 		//		if(isTokenPresent.isPresent()) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8099/mentor/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			List<MentorModel> isMentorRolePresent = mentorRepository.getMentorByMentorRole(mentorRole);
 			if(isMentorRolePresent.size()>0) {
@@ -151,7 +151,7 @@ public class MentorService implements IMentorService {
 	@Override
 	public long mentorsRoleCount(String mentorRole,String token) {
 		//		Long admId = tokenUtil.decodeToken(token);
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8099/mentor/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-Admin:8067/admin/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			List<MentorModel> isMentorRolePresent = mentorRepository.getMentorByMentorRole(mentorRole);
 			if(isMentorRolePresent.size() > 0) {

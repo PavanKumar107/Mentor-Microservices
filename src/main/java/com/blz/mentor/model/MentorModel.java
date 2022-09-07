@@ -53,9 +53,9 @@ public class MentorModel {
 		this.status = mentorDTO.getStatus();
 		this.mentorDescription = mentorDTO.getMentorDescription();
 		this.profileImageURL = mentorDTO.getProfileImageURL();
-		this.creatorUser = mentorDTO.getCreatorUser();
+//		this.creatorUser = mentorDTO.getCreatorUser();
 		this.supervisorId = mentorDTO.getSupervisorId();
-		this.createdTimeStamp = mentorDTO.getCreatedTimeStamp().now();
-		this.updatedTimeStamp = mentorDTO.getUpdatedTimeStamp();
+//		this.createdTimeStamp = mentorDTO.getCreatedTimeStamp().now();
+//		this.updatedTimeStamp = mentorDTO.getUpdatedTimeStamp();
 	}
 }

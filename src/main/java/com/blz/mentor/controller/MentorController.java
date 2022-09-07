@@ -39,7 +39,7 @@ public class MentorController {
 	 * @Param: mentorDTO and token
 	 */
 	@PostMapping("/addmentor")
-	public ResponseEntity<Response> addMentor(@Valid@RequestBody MentorDTO mentorDTO, @RequestHeader String token) {
+	public ResponseEntity<Response> addMentor(@RequestBody MentorDTO mentorDTO, @RequestHeader String token) {
 		MentorModel mentorModel = mentorService.addMentor(mentorDTO, token);
 		Response response = new Response("mentor inserted successfully", 200, mentorModel);
 		return new ResponseEntity<>(response, HttpStatus.OK);	
@@ -50,7 +50,7 @@ public class MentorController {
 	 * @Param: mentorDTO, id and token
 	 */
 	@PutMapping("/updatementor/{id}")
-	public ResponseEntity<Response> updateMentor(@Valid@RequestBody MentorDTO mentorDTO,@PathVariable Long id, @RequestHeader String token) {
+	public ResponseEntity<Response> updateMentor(@RequestBody MentorDTO mentorDTO,@PathVariable Long id, @RequestHeader String token) {
 		MentorModel mentorModel = mentorService.updateMentor(mentorDTO,id, token);
 		Response response = new Response("mentor updated successfully", 200, mentorModel);
 		return new ResponseEntity<>(response, HttpStatus.OK);
